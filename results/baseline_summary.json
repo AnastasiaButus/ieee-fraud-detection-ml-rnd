@@ -1,0 +1,40 @@
+{
+  "task": "IEEE-CIS Fraud Detection",
+  "split": {
+    "method": "chronological_holdout",
+    "time_field": "TransactionDT",
+    "cutoff": 12192853.600000001,
+    "train_rows": 472432,
+    "validation_rows": 118108
+  },
+  "features": [
+    "TransactionAmt",
+    "ProductCD",
+    "card4",
+    "card6",
+    "P_emaildomain"
+  ],
+  "preprocessing": "median -> log1p -> scaling; categorical constant impute -> one-hot",
+  "model": "LogisticRegression(solver=liblinear, L2 (default), C=1.0, max_iter=300)",
+  "seed": 42,
+  "software": {
+    "python": "3.12.4",
+    "scikit_learn": "1.4.2",
+    "pandas": "2.2.2"
+  },
+  "metrics": {
+    "DummyClassifier (prior)": {
+      "roc_auc": 0.5,
+      "average_precision": 0.034409184813899145
+    },
+    "LogisticRegression (baseline)": {
+      "roc_auc": 0.7499753675936515,
+      "average_precision": 0.14181858238400907
+    }
+  },
+  "top_fraction": 0.01,
+  "precision_at_top_fraction": 0.30710659898477155,
+  "recall_at_top_fraction": 0.08932086614173228,
+  "false_positive_at_top_fraction": 819,
+  "false_negative_at_top_fraction": 3701
+}

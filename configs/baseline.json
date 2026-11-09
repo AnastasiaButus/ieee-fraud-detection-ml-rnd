@@ -1,0 +1,12 @@
+{
+  "archive": "ieee-fraud-detection.zip",
+  "time_column": "TransactionDT",
+  "target_column": "isFraud",
+  "train_fraction": 0.8,
+  "numeric_features": ["TransactionAmt"],
+  "categorical_features": ["ProductCD", "card4", "card6", "P_emaildomain"],
+  "model": {"solver": "liblinear", "C": 1.0, "max_iter": 300, "random_state": 42},
+  "top_fraction": 0.01,
+  "artifact_dir": "artifacts",
+  "results_dir": "results"
+}

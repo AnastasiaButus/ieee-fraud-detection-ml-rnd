@@ -1,0 +1,17 @@
+{
+  "source": "local chronological holdout",
+  "validation_rows": 118108,
+  "validation_fraud": 4064,
+  "roc_auc": 0.7499753675936515,
+  "average_precision": 0.14181858238400907,
+  "dummy_roc_auc": 0.5,
+  "dummy_ap": 0.034409184813899145,
+  "top_fraction": 0.01,
+  "k": 1182,
+  "tp": 363,
+  "fp": 819,
+  "fn": 3701,
+  "tn": 113225,
+  "precision_at_top": 0.30710659898477155,
+  "recall_at_top": 0.08932086614173228
+}

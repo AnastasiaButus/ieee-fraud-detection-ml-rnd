@@ -1,0 +1,75 @@
+{
+  "method": "3 expanding-window folds on original train only",
+  "train_quantiles_for_boundaries": [
+    0.4,
+    0.6,
+    0.8
+  ],
+  "features": [
+    "TransactionAmt",
+    "ProductCD",
+    "card4",
+    "card6",
+    "P_emaildomain"
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "train_rows": 188973,
+      "validation_rows": 94486,
+      "train_time_max": 4222356.0,
+      "validation_time_min": 4222358.0,
+      "validation_time_max": 6918131.0,
+      "validation_fraud_count": 4032,
+      "validation_fraud_rate": 0.04267298859090236,
+      "roc_auc": 0.734662223680036,
+      "average_precision": 0.13693112404971722,
+      "dummy_roc_auc": 0.5,
+      "dummy_ap": 0.04267298859090236
+    },
+    {
+      "fold": 2,
+      "train_rows": 283459,
+      "validation_rows": 94486,
+      "train_time_max": 6918131.0,
+      "validation_time_min": 6918138.0,
+      "validation_time_max": 9466264.0,
+      "validation_fraud_count": 3385,
+      "validation_fraud_rate": 0.03582541328874119,
+      "roc_auc": 0.7401716863441304,
+      "average_precision": 0.11045183936246258,
+      "dummy_roc_auc": 0.5,
+      "dummy_ap": 0.03582541328874119
+    },
+    {
+      "fold": 3,
+      "train_rows": 377945,
+      "validation_rows": 94487,
+      "train_time_max": 9466264.0,
+      "validation_time_min": 9466279.0,
+      "validation_time_max": 12192842.0,
+      "validation_fraud_count": 3704,
+      "validation_fraud_rate": 0.039201159947929345,
+      "roc_auc": 0.7737653169762875,
+      "average_precision": 0.17625467966297867,
+      "dummy_roc_auc": 0.5,
+      "dummy_ap": 0.039201159947929345
+    }
+  ],
+  "summary": [
+    {
+      "metric": "ROC-AUC",
+      "mean": 0.749533075666818,
+      "std_sample": 0.021165766791496905,
+      "min": 0.734662223680036,
+      "max": 0.7737653169762875
+    },
+    {
+      "metric": "Average Precision",
+      "mean": 0.1412125476917195,
+      "std_sample": 0.033109687241131225,
+      "min": 0.11045183936246258,
+      "max": 0.17625467966297867
+    }
+  ]
+}

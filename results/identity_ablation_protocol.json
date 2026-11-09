@@ -1,0 +1,17 @@
+{
+  "baseline_config": "configs/baseline.json",
+  "fold_quantiles": [
+    0.4,
+    0.6,
+    0.8
+  ],
+  "identity_features": [
+    "DeviceType",
+    "id_12",
+    "id_15",
+    "id_31"
+  ],
+  "top_fraction": 0.01,
+  "results_dir": "results",
+  "experiment_id": "identity_ablation_v1"
+}
