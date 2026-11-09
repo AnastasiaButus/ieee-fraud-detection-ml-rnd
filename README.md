@@ -285,3 +285,23 @@ bash scripts/run_baseline.sh
 При запуске `IEEE_Fraud_EDA.ipynb` выполнить ячейки по порядку (`Kernel → Restart & Run All`). Отключённые по умолчанию дополнительные сканирование пропусков и bootstrap не являются условиями основного результата. В результате создаются таблицы и графики EDA, baseline и временной проверки.
 
 В рабочем репозитории следует сохранять **точные агрегированные файлы `results/` из локального Jupyter и независимого запуска**, а не заменять их предварительно переписанными или округлёнными таблицами. Запуск `evaluate.py` рассчитывает метрики заново. Для воспроизведения опыта H2 используется самостоятельная команда `python -m src.identity_ablation --config configs/identity_ablation.json`.
+
+
+## 10. Источники и происхождение решения
+
+**Исходные данные и постановка задачи**
+
+- [IEEE-CIS Fraud Detection — Kaggle](https://www.kaggle.com/competitions/ieee-fraud-detection) — источник данных, описание признаков, целевой переменной и метрики соревнования.
+
+**Документация используемых методов**
+
+- [scikit-learn: Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) — организация предобработки и обучения.
+- [scikit-learn: LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) — базовая модель.
+- [scikit-learn: ROC-AUC](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) и [Average Precision](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html) — оценка качества.
+
+**Происхождение реализации**
+
+В рамках работы выполнены локальный запуск экспериментов, исследование данных, проверка корректности временного разделения, сравнение моделей, анализ полученных метрик и проверка воспроизводимости независимыми скриптами.
+
+Готовые сторонние Kaggle-ноутбуки и решения участников соревнования в качестве исходной реализации не использовались. Приведённые численные результаты получены при выполнении кода на локальных данных (не перенесены из сторонних публикаций).
+
