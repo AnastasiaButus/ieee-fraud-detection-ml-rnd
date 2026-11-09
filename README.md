@@ -1,4 +1,4 @@
-# IEEE-CIS Fraud Detection — ML R&D · Домашнее задание 1
+# IEEE-CIS Fraud Detection - ML R&D · Домашнее задание 1
 
 **Задача:** оценка вероятности мошенничества онлайн-транзакции.  
 **Источник:** [IEEE-CIS Fraud Detection, Kaggle](https://www.kaggle.com/competitions/ieee-fraud-detection).  
