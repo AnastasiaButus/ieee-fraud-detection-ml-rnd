@@ -1,0 +1,98 @@
+{
+  "experiment_id": "HW2_ieee_fraud_2x2_feature_groups_v1",
+  "created_at_utc": "2026-11-22T20:03:49.293755+00:00",
+  "config": {
+    "experiment_id": "HW2_ieee_fraud_2x2_feature_groups_v1",
+    "baseline_config": "configs/baseline.json",
+    "identity_features": [
+      "DeviceType",
+      "id_12",
+      "id_15",
+      "id_31"
+    ],
+    "additional_numeric_features": [
+      "C1",
+      "C2"
+    ],
+    "fold_quantiles": [
+      0.4,
+      0.6,
+      0.8
+    ],
+    "top_fraction": 0.01,
+    "random_state": 42,
+    "primary_metric": "roc_auc",
+    "additional_metrics": [
+      "average_precision",
+      "precision_at_1pct",
+      "recall_at_1pct"
+    ],
+    "results_dir": "results/hw2",
+    "variants": {
+      "A_baseline": {
+        "add_identity": false,
+        "add_numeric": false
+      },
+      "B_identity": {
+        "add_identity": true,
+        "add_numeric": false
+      },
+      "C_C1_C2": {
+        "add_identity": false,
+        "add_numeric": true
+      },
+      "D_full": {
+        "add_identity": true,
+        "add_numeric": true
+      }
+    }
+  },
+  "baseline_config": {
+    "archive": "ieee-fraud-detection.zip",
+    "time_column": "TransactionDT",
+    "target_column": "isFraud",
+    "train_fraction": 0.8,
+    "numeric_features": [
+      "TransactionAmt"
+    ],
+    "categorical_features": [
+      "ProductCD",
+      "card4",
+      "card6",
+      "P_emaildomain"
+    ],
+    "model": {
+      "solver": "liblinear",
+      "C": 1.0,
+      "max_iter": 300,
+      "random_state": 42
+    },
+    "top_fraction": 0.01,
+    "artifact_dir": "artifacts",
+    "results_dir": "results"
+  },
+  "config_sha256": "0237fbb52a98d61f6b8a7ece318b36de73b47c554ee83c64b0f753c8c43304b0",
+  "baseline_config_sha256": "81a27b710dc0d2a8a9be52b0ebcfcb92c6702abcf710d5d8a5f955b37c7b0293",
+  "original_baseline_control": {
+    "comparison_available": true,
+    "max_abs_difference": {
+      "roc_auc": 0.0,
+      "average_precision": 8.326672684688674e-17
+    }
+  },
+  "outer_split": {
+    "outer_train_rows": 472432,
+    "outer_validation_rows": 118108,
+    "outer_cutoff_dt": 12192853.600000001,
+    "outer_train_max_dt": 12192842.0,
+    "outer_validation_min_dt": 12192900.0
+  },
+  "environment": {
+    "python": "3.12.4",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "sklearn": "1.4.2"
+  },
+  "selection_protocol": "Comparison on 3 fixed expanding-window folds inside HW1 train; outer HW1 validation is not used.",
+  "note": "Только агрегированные результаты. Построчные данные и предсказания не сохраняются."
+}

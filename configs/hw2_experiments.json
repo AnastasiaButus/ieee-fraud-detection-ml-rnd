@@ -1,0 +1,18 @@
+{
+  "experiment_id": "HW2_ieee_fraud_2x2_feature_groups_v1",
+  "baseline_config": "configs/baseline.json",
+  "identity_features": ["DeviceType", "id_12", "id_15", "id_31"],
+  "additional_numeric_features": ["C1", "C2"],
+  "fold_quantiles": [0.4, 0.6, 0.8],
+  "top_fraction": 0.01,
+  "random_state": 42,
+  "primary_metric": "roc_auc",
+  "additional_metrics": ["average_precision", "precision_at_1pct", "recall_at_1pct"],
+  "results_dir": "results/hw2",
+  "variants": {
+    "A_baseline": {"add_identity": false, "add_numeric": false},
+    "B_identity": {"add_identity": true, "add_numeric": false},
+    "C_C1_C2": {"add_identity": false, "add_numeric": true},
+    "D_full": {"add_identity": true, "add_numeric": true}
+  }
+}
