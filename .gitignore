@@ -21,3 +21,5 @@ __pycache__/
 .venv/
 .conda/
 .DS_Store
+
+!results/hw2/*.csv
